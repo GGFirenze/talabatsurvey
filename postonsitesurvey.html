@@ -54,7 +54,7 @@
         var sessionReplayTracking = window.sessionReplay.plugin({sampleRate: 1});
         window.amplitude.add(sessionReplayTracking);
         window.amplitude.init('bbda33f879f6509905fccb3c654c5940', {
-            fetchRemoteConfig: false,
+            fetchRemoteConfig: true,
             autocapture: {
                 attribution: true,
                 pageViews: true,
