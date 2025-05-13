@@ -50,10 +50,8 @@
     <script src="https://cdn.amplitude.com/script/bbda33f879f6509905fccb3c654c5940.engagement.js"></script>
     
     <script>
-        window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
-        window.amplitude.add(sessionReplayTracking);
         window.amplitude.init('bbda33f879f6509905fccb3c654c5940', {
-            fetchRemoteConfig: false,
+            fetchRemoteConfig: true,
             autocapture: {
                 attribution: true,
                 pageViews: true,
@@ -63,6 +61,7 @@
                 elementInteractions: false
             },
         });
+        window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
         window.amplitude.add(window.engagement.plugin());
     </script>
 </head>
