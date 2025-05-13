@@ -45,14 +45,16 @@
         }
     </style>
     
-    <script src="https://cdn.amplitude.com/script/bbda33f879f6509905fccb3c654c5940.js"></script>
-    <!--<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.12.1-min.js.gz"></script>
-    <script src="https://cdn.amplitude.com/script/bbda33f879f6509905fccb3c654c5940.engagement.js"></script>-->
+   <script src="https://cdn.amplitude.com/script/bbda33f879f6509905fccb3c654c5940.js"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.12.1-min.js.gz"></script>
+    <script type="text/javascript" src="https://cdn.amplitude.com/script/bbda33f879f6509905fccb3c654c5940.experiment.js"></script>
+    <script src="https://cdn.amplitude.com/script/bbda33f879f6509905fccb3c654c5940.engagement.js"></script>
+    
     <script>
-        window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
-        window.amplitude.add(window.engagement.plugin());
+        var sessionReplayTracking = window.sessionReplay.plugin({sampleRate: 1});
+        window.amplitude.add(sessionReplayTracking);
         window.amplitude.init('bbda33f879f6509905fccb3c654c5940', {
-            fetchRemoteConfig: true,
+            fetchRemoteConfig: false,
             autocapture: {
                 attribution: true,
                 pageViews: true,
@@ -62,6 +64,7 @@
                 elementInteractions: false
             },
         });
+        window.amplitude.add(window.engagement.plugin());
     </script>
 </head>
 <body>
